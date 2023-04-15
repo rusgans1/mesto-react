@@ -1,4 +1,4 @@
-function PopupWithImage({ card, onClose }) {
+function ImagePopup({ card, onClose }) {
   return (
     <section
       className={`popup popup_fullsize popup_overlay ${
@@ -27,4 +27,4 @@ function PopupWithImage({ card, onClose }) {
   );
 }
 
-export default PopupWithImage;
+export default ImagePopup;

@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
-import PopupWithImage from "./PopupWithImage";
+import ImagePopup from "./ImagePopup";
 
 function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false);
@@ -74,7 +74,7 @@ function App() {
             buttonText="Да"
             onClose={closeAllPopup}
           />
-          <PopupWithImage card={selectedCard} onClose={closeAllPopup} />
+          <ImagePopup card={selectedCard} onClose={closeAllPopup} />
         </div>
       </body>
     </>
