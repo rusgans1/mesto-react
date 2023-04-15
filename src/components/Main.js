@@ -63,8 +63,8 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
       </section>
 
       <section className="elements" aria-label="Галерея">
-        {cards.map((item) => {
-          return <Card card={item} onCardClick={onCardClick} />;
+        {cards.map((item, i) => {
+          return <Card key={i} card={item} onCardClick={onCardClick} />;
         })}
       </section>
     </main>

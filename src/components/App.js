@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      <body class="body">
+      <div className="body">
         <div className="page">
           <Header />
           <Main
@@ -47,36 +47,44 @@ function App() {
             onCardClick={onCardClick}
           />
           <Footer />
-          <PopupWithForm
-            name="profile-edit"
-            title="Редактирование профиля"
-            buttonText="Сохранить"
-            isOpen={isEditProfilePopupOpen}
-            onClose={closeAllPopup}
-          />
-          <PopupWithForm
-            name="card-add"
-            title="Новое место"
-            buttonText="Создать"
-            isOpen={isAddPlacePopupOpen}
-            onClose={closeAllPopup}
-          />
-          <PopupWithForm
-            name="avatar-change"
-            title="Обновить аватар"
-            buttonText="Сохранить"
-            isOpen={isEditAvatarPopupOpen}
-            onClose={closeAllPopup}
-          />
-          <PopupWithForm
-            name="confirm-remove"
-            title={`Вы уверены&#63`}
-            buttonText="Да"
-            onClose={closeAllPopup}
-          />
+          <PopupWithForm>
+            <input 
+              name="profile-edit"
+              title="Редактирование профиля"
+              buttonText="Сохранить"
+              isOpen={isEditProfilePopupOpen}
+              onClose={closeAllPopup}
+            />
+          </PopupWithForm>
+          <PopupWithForm>
+            <input
+              name="card-add"
+              title="Новое место"
+              buttonText="Создать"
+              isOpen={isAddPlacePopupOpen}
+              onClose={closeAllPopup}
+            />
+          </PopupWithForm>
+          <PopupWithForm>
+            <input
+              name="avatar-change"
+              title="Обновить аватар"
+              buttonText="Сохранить"
+              isOpen={isEditAvatarPopupOpen}
+              onClose={closeAllPopup}
+            />
+          </PopupWithForm>
+          <PopupWithForm>
+            <input
+              name="confirm-remove"
+              title={`Вы уверены&#63`}
+              buttonText="Да"
+              onClose={closeAllPopup}
+            />
+          </PopupWithForm>
           <ImagePopup card={selectedCard} onClose={closeAllPopup} />
         </div>
-      </body>
+      </div>
     </>
   );
 }
