@@ -47,40 +47,87 @@ function App() {
             onCardClick={onCardClick}
           />
           <Footer />
-          <PopupWithForm>
-            <input 
-              name="profile-edit"
-              title="Редактирование профиля"
-              buttonText="Сохранить"
-              isOpen={isEditProfilePopupOpen}
-              onClose={closeAllPopup}
-            />
-          </PopupWithForm>
-          <PopupWithForm>
+          <PopupWithForm
+            name="profile-edit"
+            title="Редактирование профиля"
+            buttonText="Сохранить"
+            isOpen={isEditProfilePopupOpen}
+            onClose={closeAllPopup}
+          >
             <input
-              name="card-add"
-              title="Новое место"
-              buttonText="Создать"
-              isOpen={isAddPlacePopupOpen}
-              onClose={closeAllPopup}
+              className="popup__input popup__input_name"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Имя"
+              minLength="2"
+              maxLength="40"
+              required
             />
-          </PopupWithForm>
-          <PopupWithForm>
+            <span className="popup__error name-error" id="error-name"></span>
             <input
-              name="avatar-change"
-              title="Обновить аватар"
-              buttonText="Сохранить"
-              isOpen={isEditAvatarPopupOpen}
-              onClose={closeAllPopup}
+              className="popup__input popup__input_about"
+              type="text"
+              id="about"
+              name="about"
+              placeholder="О себе"
+              minLength="2"
+              maxLength="200"
+              required
             />
+            <span className="popup__error about-error" id="error-about"></span>
           </PopupWithForm>
-          <PopupWithForm>
+          <PopupWithForm
+            name="avatar-change"
+            title="Обновить аватар"
+            buttonText="Сохранить"
+            isOpen={isEditAvatarPopupOpen}
+            onClose={closeAllPopup}
+          >
             <input
-              name="confirm-remove"
-              title={`Вы уверены&#63`}
-              buttonText="Да"
-              onClose={closeAllPopup}
+              className="popup__input popup__input_link"
+              type="url"
+              id="avatar-link"
+              name="avatar"
+              placeholder="Ссылка на картинку"
+              required
             />
+            <span className="popup__error avatar-link-error" id="error-avatar-link"></span>
+          </PopupWithForm>
+          <PopupWithForm
+            name="card-add"
+            title="Новое место"
+            buttonText="Создать"
+            isOpen={isAddPlacePopupOpen}
+            onClose={closeAllPopup}
+          >
+            <input
+              className="popup__input popup__input_title"
+              type="text"
+              id="title"
+              name="name"
+              placeholder="Название"
+              minLength="2"
+              maxLength="30"
+              required
+            />
+            <span className="popup__error title-error" id="error-title"></span>
+            <input
+              className="popup__input popup__input_link"
+              type="url"
+              id="link"
+              name="link"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span className="popup__error link-error" id="error-link"></span>
+          </PopupWithForm>
+          <PopupWithForm
+            name="confirm-remove"
+            title={`Вы уверены&#63`}
+            buttonText="Да"
+            onClose={closeAllPopup}
+          >
           </PopupWithForm>
           <ImagePopup card={selectedCard} onClose={closeAllPopup} />
         </div>
